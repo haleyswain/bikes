@@ -8,6 +8,7 @@ Bike = function(title, year) {
 
 $(document).ready(function() {
   $('#bikeLocation').submit(function(event) {
+    $('#showBikes').empty();
     event.preventDefault();
     var city = $('#location').val();
     $('#location').val("");
@@ -17,6 +18,13 @@ $(document).ready(function() {
         var title = bikes[i].title;
         $('#showBikes').append("<li>" + title + "</li>");
       }
+      $('#bikeColor').submit(function(event) {
+        $('#showBikes').empty();
+        for (i = 0; i <= bikes.length; i++) {
+        var title = bikes[i].title;
+        var color = bikes[i].color;
+        $('#showBikes').append("<li>" + title + color + "</li>");
+      });
     });
   });
 });
