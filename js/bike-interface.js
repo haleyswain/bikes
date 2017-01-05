@@ -1,10 +1,9 @@
 var apiKey = require('./../.env').apiKey;
-var bikes = []
+var bikes = [];
 
-Bike = function(title, year) {
+Bike = function(title) {
   this.title = title;
-  this.year = year;
-}
+};
 
 $(document).ready(function() {
   $('#bikeLocation').submit(function(event) {
@@ -16,15 +15,10 @@ $(document).ready(function() {
       var bikes = response.bikes;
       for (i = 0; i <= bikes.length; i++) {
         var title = bikes[i].title;
-        $('#showBikes').append("<li>" + title + "</li>");
+        var colors = bikes[i].frame_colors;
+        console.log(colors);
+        $('#showBikes').append("<li>" + title + "<br>" + colors + "</li>");
       }
-      $('#bikeColor').submit(function(event) {
-        $('#showBikes').empty();
-        for (i = 0; i <= bikes.length; i++) {
-        var title = bikes[i].title;
-        var color = bikes[i].color;
-        $('#showBikes').append("<li>" + title + color + "</li>");
       });
     });
   });
-});
