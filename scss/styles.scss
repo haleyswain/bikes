@@ -10,6 +10,7 @@ h1, h3 {
   color: white;
 }
 .box {
+  color: black;
   margin-left: 25%;
   background-color: white;
   max-width: 50%;
@@ -18,5 +19,8 @@ h1, h3 {
   .button {
     font-weight: bold;
   }
+}
 
+img {
+  padding: 30px;
 }
